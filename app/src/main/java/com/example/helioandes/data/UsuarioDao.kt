@@ -28,6 +28,6 @@ interface UsuarioDao {
     suspend fun obtenerUsuarioPorId(id: Int): Usuario
 
     @Query("SELECT * FROM Usuario WHERE nombre = :nombre AND contrasena = :contrasena")
-    suspend fun obtenerUsuarioPorNombreYContrasena(nombre: String, contrasena: String): Usuario
+    suspend fun obtenerLogin(nombre: String, contrasena: String): Usuario
 
 }

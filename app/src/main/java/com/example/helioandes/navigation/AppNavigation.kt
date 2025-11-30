@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.helioandes.ui.screen.LoginScreen
 import com.example.helioandes.ui.screen.SplashScreen
 
 
@@ -14,7 +15,6 @@ fun AppNavigation(){
     NavHost(navController = navController,startDestination = "splash"){
         //AQUI VAN LAS PAGINAS.
         composable ("splash"){ SplashScreen(navController = navController) }
+        composable("login") { LoginScreen(navController = navController) }
     }
-
-
 }
