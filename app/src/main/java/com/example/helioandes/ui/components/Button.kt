@@ -27,8 +27,8 @@ fun Boton (texto: String, onClickAccion: () -> Unit){
             .background(
                 brush = Brush.verticalGradient(
                     colors = listOf(
-                        Color(0xFFCC0000),
-                        Color(0xFF8B0000)
+                        Color(0xFF17A2B8),
+                        Color(0xFF138496)
                     )
                 ),
                 shape = RoundedCornerShape(12.dp)
@@ -41,15 +41,6 @@ fun Boton (texto: String, onClickAccion: () -> Unit){
         elevation = ButtonDefaults.buttonElevation(
             defaultElevation = 8.dp,
             pressedElevation = 4.dp
-        ),
-        border = BorderStroke(
-            width = 2.dp,
-            brush = Brush.linearGradient(
-                colors = listOf(
-                    Color(0xFFFFDE00), // Amarillo Pokémon
-                    Color(0xFFB3A125)  // Amarillo oscuro
-                )
-            )
         )
         ) {
         Text(
