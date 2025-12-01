@@ -9,6 +9,7 @@ import com.example.helioandes.model.Usuario
 import com.example.helioandes.model.Producto
 import com.example.helioandes.model.Transaccion
 import com.example.helioandes.model.DetalleTransaccion
+import com.example.helioandes.model.FormularioContacto
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -23,6 +24,7 @@ import kotlinx.coroutines.launch
         Producto::class,
         Transaccion::class,
         DetalleTransaccion::class,
+        FormularioContacto::class,
     ],
     version = 1)
 abstract class HelioDataBase : RoomDatabase() {
@@ -31,6 +33,7 @@ abstract class HelioDataBase : RoomDatabase() {
     abstract fun transaccionDao(): TransaccionDao
     abstract fun detalleTransaccionDao(): DetalleTransaccionDao
 
+    abstract fun formularioContactoDao(): FormularioContactoDao
 
     companion object{
         private var database: HelioDataBase? = null

@@ -5,6 +5,7 @@ import androidx.compose.material.icons.filled.AccountBox
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Phone
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -50,8 +51,8 @@ fun BarraNavegacion(
             )
         )
         NavigationBarItem(
-            icon = { Icon(Icons.Default.Build, contentDescription = "Soluciones") },
-            label = { Text("Soluciones", fontSize = 10.sp) },
+            icon = { Icon(Icons.Default.Phone, contentDescription = "Contacto") },
+            label = { Text("Contacto", fontSize = 10.sp) },
             selected = selectedItem == 2,
             onClick = { onItemSelected(2) },
             colors = NavigationBarItemDefaults.colors(
@@ -63,8 +64,8 @@ fun BarraNavegacion(
             )
         )
         NavigationBarItem(
-            icon = { Icon(Icons.Default.Phone, contentDescription = "Contacto") },
-            label = { Text("Contacto", fontSize = 10.sp) },
+            icon = { Icon(Icons.Default.ShoppingCart, contentDescription = "Carrito") },
+            label = { Text("Carrito", fontSize = 10.sp) },
             selected = selectedItem == 3,
             onClick = { onItemSelected(3) },
             colors = NavigationBarItemDefaults.colors(

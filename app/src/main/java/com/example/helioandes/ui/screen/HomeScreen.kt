@@ -27,7 +27,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.helioandes.ui.components.BarraNavegacion
 import com.example.helioandes.ui.components.Boton
-import com.example.helioandes.ui.components.TituloTexto
 import com.example.helioandes.ui.components.CategoryChip
 import com.example.helioandes.ui.components.DescriptionText
 import com.example.helioandes.ui.components.ServiceCard
