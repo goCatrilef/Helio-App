@@ -1,0 +1,22 @@
+package com.example.helioandes.ui.components
+
+import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.text.input.VisualTransformation
+
+@Composable
+fun CampoTexto(
+    valor: String,
+    onValorCambio: (String) -> Unit,
+    etiqueta: String,
+    visualTransformation: VisualTransformation = VisualTransformation.None,
+){
+    OutlinedTextField(
+        value = valor,
+        onValueChange = onValorCambio,
+        label = { Text(etiqueta) },
+        visualTransformation = visualTransformation
+    )
+
+}
