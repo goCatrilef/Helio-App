@@ -26,7 +26,9 @@ import kotlinx.coroutines.launch
         DetalleTransaccion::class,
         FormularioContacto::class,
     ],
-    version = 1)
+    version = 1,
+    exportSchema = false
+    )
 abstract class HelioDataBase : RoomDatabase() {
     abstract fun usuarioDao(): UsuarioDao
     abstract fun productoDao(): ProductoDao
@@ -84,18 +86,10 @@ abstract class HelioDataBase : RoomDatabase() {
 
             productos.forEach { productoDao.insertar(it) }
 
-
-
-
-
-
         }
 
 
     }
-
-
-
 
 }
 

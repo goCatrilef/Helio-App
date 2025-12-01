@@ -3,7 +3,7 @@ package com.example.helioandes.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "Producto")
+@Entity(tableName = "FormularioContacto")
 data class FormularioContacto(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
