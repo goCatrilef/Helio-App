@@ -17,6 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.helioandes.ui.components.Boton
@@ -92,6 +93,23 @@ fun LoginScreen(navController: NavController) {
                         }
                     }
 
+                }
+            )
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
+            Text(
+                text = "¿No tienes cuenta?",
+                color = Color.Gray,
+                fontSize = 14.sp
+            )
+            
+            Spacer(modifier = Modifier.height(8.dp))
+            
+            Boton(
+                texto = "Crear Cuenta",
+                onClickAccion = {
+                    navController.navigate("registro")
                 }
             )
         }
