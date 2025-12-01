@@ -2,7 +2,7 @@ package com.example.helioandes.ui.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.ShoppingCart
@@ -68,6 +68,19 @@ fun BarraNavegacion(
             label = { Text("Carrito", fontSize = 10.sp) },
             selected = selectedItem == 3,
             onClick = { onItemSelected(3) },
+            colors = NavigationBarItemDefaults.colors(
+                selectedIconColor = Color(0xFF00A896),
+                selectedTextColor = Color(0xFF00A896),
+                unselectedIconColor = Color.Gray,
+                unselectedTextColor = Color.Gray,
+                indicatorColor = Color.Transparent
+            )
+        )
+        NavigationBarItem(
+            icon = { Icon(Icons.Default.AccountCircle, contentDescription = "Perfil") },
+            label = { Text("Perfil", fontSize = 10.sp) },
+            selected = selectedItem == 4,
+            onClick = { onItemSelected(4) },
             colors = NavigationBarItemDefaults.colors(
                 selectedIconColor = Color(0xFF00A896),
                 selectedTextColor = Color(0xFF00A896),

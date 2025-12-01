@@ -21,9 +21,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun ServiceCard(icon: ImageVector, title: String, subtitle: String) {
+fun ServiceCard(
+    icon: ImageVector, 
+    title: String, 
+    subtitle: String,
+    modifier: Modifier = Modifier
+) {
     Card(
-        modifier = Modifier
+        modifier = modifier
             .width(150.dp)
             .height(120.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),

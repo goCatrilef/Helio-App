@@ -38,13 +38,12 @@ import androidx.navigation.NavController
 import com.example.helioandes.R
 import com.example.helioandes.model.Producto
 import com.example.helioandes.ui.components.BarraNavegacion
-
 import com.example.helioandes.ui.components.CategoryChip
 import com.example.helioandes.ui.components.DescriptionText
 import com.example.helioandes.ui.components.ServiceCard
 import com.example.helioandes.ui.components.HeaderApp
+import com.example.helioandes.ui.components.ProductoCard
 import com.example.helioandes.viewmodel.ProductoViewModel
-
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -61,7 +60,16 @@ fun HomeScreen(navController: NavController) {
         bottomBar = {
             BarraNavegacion(
                 selectedItem = selectedBottomItem,
-                onItemSelected = { selectedBottomItem = it }
+                onItemSelected = { index ->
+                    selectedBottomItem = index
+                    when (index) {
+                        0 -> navController.navigate("home")
+                        1 -> navController.navigate("cotizar")
+                        2 -> navController.navigate("contacto")
+                        3 -> navController.navigate("carrito")
+                        4 -> navController.navigate("perfil")
+                    }
+                }
             )
         }
     ) { paddingValues ->
@@ -90,28 +98,47 @@ fun HomeScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Cards de Productos
+            // Lista de Productos mejorada
+            LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                items(productos) { producto ->
+                    ProductoCard(
+                        producto = producto,
+                        onAddToCart = { 
+                            // Aquí podrías agregar lógica futura para el carrito
+                        }
+                    )
+                }
+            }
+            
+            Spacer(modifier = Modifier.height(24.dp))
+            
+            // Servicios
+            Text(
+                text = "Nuestros Servicios",
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color(0xFF1A1A2E)
+            )
+            
+            Spacer(modifier = Modifier.height(16.dp))
+            
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                LazyColumn {
-                    //áca vamos a trbajar con la Base de Datos.
-                    //Esto entrega la nombre y la foto
-                    items(productos) { producto ->
-                        ProductoItem(producto = producto)
-
-                    }
-                }
                 ServiceCard(
                     icon = Icons.Default.Info,
                     title = "Estudio Energético",
-                    subtitle = "Análisis a medida"
+                    subtitle = "Análisis a medida",
+                    modifier = Modifier.weight(1f)
                 )
                 ServiceCard(
                     icon = Icons.Default.Check,
                     title = "Instalación Certificada",
-                    subtitle = "Profesional 360°"
+                    subtitle = "Profesional 360°",
+                    modifier = Modifier.weight(1f)
                 )
             }
         }
@@ -143,12 +170,10 @@ fun ProductoItem(producto: Producto) {
 
 
 private fun obtieneImagen(context: Context, imagen: String?): Int {
-    val nombre = imagen?.replace(".png", "") ?: "helio"
-    val resouceId = context.resources.getIdentifier(nombre, "drawble", context.packageName)
+    val nombre = imagen?.replace(".png", "") ?: "logo"
+    val resourceId = context.resources.getIdentifier(nombre, "drawable", context.packageName)
 
-    return if(resouceId == 0 ) R.drawable.helio else resouceId
-
-
+    return if(resourceId == 0) R.drawable.logo else resourceId
 }
 
 
