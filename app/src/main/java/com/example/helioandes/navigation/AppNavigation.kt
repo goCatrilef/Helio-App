@@ -11,6 +11,7 @@ import com.example.helioandes.ui.screen.EditarPerfilScreen
 import com.example.helioandes.ui.screen.HomeScreen
 import com.example.helioandes.ui.screen.LoginScreen
 import com.example.helioandes.ui.screen.PerfilScreen
+import com.example.helioandes.ui.screen.PostScreen
 import com.example.helioandes.ui.screen.RegistroScreen
 import com.example.helioandes.ui.screen.SplashScreen
 
@@ -30,5 +31,6 @@ fun AppNavigation(){
         composable("carrito") { CarritoScreen(navController = navController) }
         composable("perfil") { PerfilScreen(navController = navController) }
         composable("editar_perfil") { EditarPerfilScreen(navController = navController) }
+        composable("postscreen") { PostScreen() }
     }
 }

@@ -38,12 +38,17 @@ import androidx.navigation.NavController
 import com.example.helioandes.R
 import com.example.helioandes.model.Producto
 import com.example.helioandes.ui.components.BarraNavegacion
+import com.example.helioandes.ui.components.Boton
 import com.example.helioandes.ui.components.CategoryChip
 import com.example.helioandes.ui.components.DescriptionText
 import com.example.helioandes.ui.components.ServiceCard
 import com.example.helioandes.ui.components.HeaderApp
 import com.example.helioandes.ui.components.ProductoCard
 import com.example.helioandes.viewmodel.ProductoViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @Composable
 fun HomeScreen(navController: NavController) {
@@ -142,6 +147,16 @@ fun HomeScreen(navController: NavController) {
                 )
             }
         }
+
+        Spacer(modifier = Modifier.height(24.dp))
+
+        Boton(
+            texto = "Post de API",
+            onClickAccion = {
+                navController.navigate("post")
+            }
+        )
+
     }
 }
 
